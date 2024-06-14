@@ -38,13 +38,12 @@ def read_csv_file(file_path):
 
 # Especificando o caminho completo para a pasta 'input' e para o arquivo CSV
 input_folder = os.path.join(os.getcwd(), 'input')
-input_file_path = os.path.join(input_folder, 'links_input.csv')
+input_file_path = os.path.join(input_folder, 'links_input2.csv')
 
 # Lendo o arquivo CSV
 df_csv = read_csv_file(input_file_path)
 
 urls_to_check = df_csv['URL'].tolist()
-
 
 # Verificando se o arquivo CSV foi lido com sucesso
 if df_csv is not None:
@@ -62,7 +61,7 @@ if df_csv is not None:
     os.makedirs(output_folder, exist_ok=True)
 
     # Exportando os resultados para CSV
-    output_file_path = os.path.join(output_folder, 'result_redirect.csv')
+    output_file_path = os.path.join(output_folder, 'result_redirect2.csv')
     results_table.to_csv(output_file_path, sep=';', quotechar='"', quoting=csv.QUOTE_NONNUMERIC, index=False)
     
     # Exibindo os dados do arquivo CSV
